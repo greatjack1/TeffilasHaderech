@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/hebrew_version"
+            android:icon="@drawable/ic_language_black_24dp"
+            android:title="Hebrew Text" />
+        <item
+            android:id="@+id/english_version"
+            android:icon="@drawable/ic_language_black_24dp"
+            android:title="English Text" />
+        <item
+            android:id="@+id/transliterated_version"
+            android:icon="@drawable/ic_language_black_24dp"
+            android:title="Transliterated Text" />
+        <item
+            android:id="@+id/about_app_menu_item"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="About App" />
+    </group>
+</menu>
