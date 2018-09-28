@@ -14,6 +14,10 @@
             android:icon="@drawable/ic_language_black_24dp"
             android:title="Transliterated Text" />
         <item
+            android:id="@+id/say_along_audio"
+            android:icon="@drawable/ic_audiotrack_black_24dp"
+            android:title="Say Along Audio" />
+        <item
             android:id="@+id/about_app_menu_item"
             android:icon="@drawable/ic_info_outline_black_24dp"
             android:title="About App" />

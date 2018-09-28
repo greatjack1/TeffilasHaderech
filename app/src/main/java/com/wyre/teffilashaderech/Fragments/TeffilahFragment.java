@@ -1,5 +1,6 @@
 package com.wyre.teffilashaderech.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,11 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.vorlonsoft.android.rate.AppRate;
+import com.wyre.teffilashaderech.Activities.AudioActivity;
 import com.wyre.teffilashaderech.Dialogs.FlexibleDialogFragment;
 import com.wyre.teffilashaderech.R;
 import com.wyre.teffilashaderech.Utilities.PreferenceLab;
@@ -62,6 +66,10 @@ public class TeffilahFragment extends Fragment  {
                             case R.id.transliterated_version:
                                 mTeffilaView.setText(R.string.transliterated_text);
                                 break;
+                            case R.id.say_along_audio:
+                                Intent intent = new Intent(getContext(), AudioActivity.class);
+                                startActivity(intent);
+                                break;
                         }
                         return true;
                     }
@@ -71,6 +79,7 @@ public class TeffilahFragment extends Fragment  {
 
     @Override
     public void onResume() {
+        setRetainInstance(true);
         super.onResume();
         //show a dialog to the user encouraging them to rate the app
         AppRate.with(getActivity())
@@ -85,14 +94,16 @@ public class TeffilahFragment extends Fragment  {
         PreferenceLab.getPreferenceLab(getContext().getApplicationContext()).setShowedWelcomeDialog(true);
         }
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //this is to handle the home menu item so that the drawer opens when it is clicked
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.audio_menu_button:
+                Intent intent = new Intent(getContext(), AudioActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
