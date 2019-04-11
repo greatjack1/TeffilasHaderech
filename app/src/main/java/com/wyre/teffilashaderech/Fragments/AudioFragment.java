@@ -71,7 +71,7 @@ public class AudioFragment extends Fragment {
                 mBtnPlay.setImageResource(R.drawable.ic_stop_black_24dp);
                 //intialize the media player if its null
                 if (mPlayer == null) {
-                    mPlayer = MediaPlayer.create(getContext(), R.raw.teffilashaderech);
+                    mPlayer = MediaPlayer.create(getContext(), R.raw.haderech);
                 }
                 mPlayer.start();
                 //switch over the image of t
